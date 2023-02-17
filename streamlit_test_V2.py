@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 
 st.title('hello world')
-
+st.title('second title')
 @st.cache_resource
 def init_connection():
     return snowflake.connector.connect(
-        **st.secrests["snowflake"], client_session_keep_alive=True
+        **st.secrets["snowflake"], client_session_keep_alive=True
     )
 conn = init_connection()
 
