@@ -4,6 +4,11 @@ import numpy as np
 
 st.title('hello world')
 st.title('second title')
+df = pd.DataFrame(np.random.randint(0,100,size=(100, 4)), columns=list('ABCD'))
+
+st.dataframe(df)
+
+
 @st.cache_resource
 def init_connection():
     return snowflake.connector.connect(
@@ -17,6 +22,4 @@ def run_query(query):
         cur.execute(query)
         return cur.fetch_pandas_all()
 
-df = pd.DataFrame(np.random.randint(0,100,size=(100, 4)), columns=list('ABCD'))
 
-st.dataframe(df)
