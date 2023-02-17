@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+st.title('hello world')
 
 @st.cache_resource
 def init_connection():
